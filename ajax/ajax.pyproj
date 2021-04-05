@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{c74c13c8-c3cb-44a9-a5de-f165db3913a5}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>MSBuild|envAjax|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="ajax\static\network\scripts.js" />
+    <Content Include="ajax\static\network\styles.css" />
+    <Content Include="ajax\templates\ajax\index.html" />
+    <Content Include="ajax\templates\ajax\layout.html" />
+    <Content Include="ajax\templates\ajax\login.html" />
+    <Content Include="ajax\templates\ajax\register.html" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajax\admin.py" />
+    <Compile Include="ajax\apps.py" />
+    <Compile Include="ajax\models.py" />
+    <Compile Include="ajax\tests.py" />
+    <Compile Include="ajax\urls.py" />
+    <Compile Include="ajax\views.py" />
+    <Compile Include="ajax\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="project4\asgi.py" />
+    <Compile Include="project4\settings.py" />
+    <Compile Include="project4\urls.py" />
+    <Compile Include="project4\wsgi.py" />
+    <Compile Include="project4\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ajax" />
+    <Folder Include="ajax\static\" />
+    <Folder Include="ajax\static\network" />
+    <Folder Include="ajax\templates\" />
+    <Folder Include="ajax\templates\ajax" />
+    <Folder Include="project4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="..\envAjax\">
+      <Id>envAjax</Id>
+      <Version>3.9</Version>
+      <Description>envAjax (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

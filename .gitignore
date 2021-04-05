@@ -1,0 +1,10 @@
+## Ignore files and folders during 'git add'
+
+# PROJECT 
+/*
+!ajax/
+!ajax.sln
+!ajax.pyproj
+!.gitignore
+**/__pycache__
+
