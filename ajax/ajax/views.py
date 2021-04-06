@@ -6,9 +6,73 @@ from django.urls import reverse
 
 from .models import User
 
+from django.http import JsonResponse
+import json
+from django import forms
+
+class PostForm(forms.Form):
+    text = forms.CharField(label="Message")
+    #name = forms.CharField(label="Name")
 
 def index(request):
-    return render(request, "ajax/index.html")
+
+    return render(request, "ajax/index.html",{"form":PostForm()})
+
+# FETCH GET STRING
+def getdata(request):
+    print("get data ajax received")
+    return HttpResponse('Hello, world! Returned get data.')
+
+# FETCH GET JSON
+def getjson(request):
+    print("get json ajax received")
+    return JsonResponse({'item':'Hello, world! Returned get json.'})
+
+# FETCH POST JSON 
+def postjson(request):
+    if request.is_ajax():
+        print("post json ajax received")
+        if request.user.is_authenticated:
+            print("post json ajax received - user authenticated")
+            if request.method == 'POST':
+                print( (json.loads(request.body))['post_data'] ) 
+            return JsonResponse({'item':'Hello, world! Returned post json.'})
+        else:
+            return JsonResponse({'item':'Authentication Failed'})
+    
+#TETCH POST FORM
+def postform(request):
+    if request.is_ajax():
+        print("post form ajax received")
+        if request.user.is_authenticated:
+            print("post form ajax received - user authenticated")
+            if request.method == "POST":
+                print(request.POST.get("text"))
+                return HttpResponse(PostForm())
+    return JsonResponse({'item':'EMPTY RETURN'})
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ----------------- LOGIN METHOS --------------------
 
 
 def login_view(request):

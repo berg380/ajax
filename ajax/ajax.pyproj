@@ -19,8 +19,8 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="ajax\static\network\scripts.js" />
-    <Content Include="ajax\static\network\styles.css" />
+    <Content Include="ajax\static\ajax\scripts.js" />
+    <Content Include="ajax\static\ajax\styles.css" />
     <Content Include="ajax\templates\ajax\index.html" />
     <Content Include="ajax\templates\ajax\layout.html" />
     <Content Include="ajax\templates\ajax\login.html" />
@@ -45,7 +45,7 @@
   <ItemGroup>
     <Folder Include="ajax" />
     <Folder Include="ajax\static\" />
-    <Folder Include="ajax\static\network" />
+    <Folder Include="ajax\static\ajax\" />
     <Folder Include="ajax\templates\" />
     <Folder Include="ajax\templates\ajax" />
     <Folder Include="project4" />
