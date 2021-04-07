@@ -5,22 +5,32 @@
 
 <div class="ptt">Javascript fetch tests</div>
 
-<button class="btn btn-primary" onclick="get_data();">Get data</button>
+<button class="btn btn-primary m-2" onclick="get_data();">Get data</button>
 <div id="blockA">...</div>
 
-<button class="btn btn-info" onclick="get_json();">Get json</button>
+<button class="btn btn-info m-2" onclick="get_json();">Get json</button>
 <div id="blockB">...</div>
 
-<button class="btn btn-danger" onclick="post_json();">Post json</button>
+<button class="btn btn-danger m-2" onclick="post_json();">Post json</button>
 <div id="blockC">...</div>
 
-<button class="btn btn-secondary" onclick="post_form();">Post form</button>
-<form>
-    <!--<input type="text" name="text"/>-->
-    {{form}}
-</form>
-<div id="blockD">...</div>
+<div class="">
+    <button class="btn btn-secondary m-2" onclick="post_form();">Post form</button>
+    <div class="m-2">
+        <form id="form-A">
+            {{form_A}}
+        </form>
+    </div>
+</div>
 
+<div class="">
+    <button class="btn btn-success m-2" onclick="post_form_json_return();">Post form json returned</button>
+    <div class="m-2">
+        <form id="form-B">
+            {{form_B}}
 
+        </form>
+    </div>
+</div>
 
-{% endblock %}
+    {% endblock %}

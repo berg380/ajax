@@ -11,5 +11,6 @@ urlpatterns = [
     path("getdata", views.getdata, name="getdata"),
     path("getjson", views.getjson, name="getjson"),
     path("postjson", views.postjson, name="postjson"),
-    path("postform", views.postform, name="postform")
+    path("postform", views.postform, name="postform"),
+    path("postformB", views.postformB, name="postformB"),
 ]
